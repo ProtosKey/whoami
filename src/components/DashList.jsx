@@ -1,14 +1,15 @@
 import BracketLink from './BracketLink';
 import styles from './DashList.module.css';
 
-export default function DashList({ rows }) {
-  const width = Math.max(...rows.map((row) => row.label.length)) + 1;
+export default function DashList({ rows, showTotal = true, width }) {
+  const minWidth = Math.max(...rows.map((row) => row.label.length)) + 1;
+  const effectiveWidth = width ? Math.max(width, minWidth) : minWidth;
 
   return (
     <div className={styles.list}>
-      <p className={styles.total}>total {rows.length}</p>
+      {showTotal && <p className={styles.total}>total {rows.length}</p>}
       {rows.map((row) => {
-        const dashes = '-'.repeat(width - row.label.length);
+        const dashes = '-'.repeat(effectiveWidth - row.label.length);
         return (
           <p key={row.label} className={styles.row}>
             <span className={styles.dash}>{dashes}</span>

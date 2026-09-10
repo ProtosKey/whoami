@@ -3,67 +3,7 @@
 }
 
 .total {
-  margin: 0.6rem 0 0.6rem;
+  margin: 0.6rem 0 0.75rem;
   color: var(--text-dim);
   font-size: 0.85rem;
-}
-
-.row {
-  margin: 0 0 0.9rem;
-  font-size: 0.88rem;
-}
-
-.line {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0 0.75rem;
-  margin: 0;
-}
-
-.perm {
-  color: var(--text-dim);
-  flex: 0 0 auto;
-}
-
-.name {
-  color: var(--accent);
-  font-weight: 700;
-  text-decoration: none;
-  white-space: pre;
-  flex: 0 0 auto;
-  padding: 0.1em 0.3em;
-  margin: -0.1em -0.3em;
-  transition: background-color 0.1s ease, color 0.1s ease;
-}
-
-.name:hover,
-.name:focus-visible {
-  background-color: var(--accent);
-  color: var(--accent-contrast);
-  outline: none;
-}
-
-.desc {
-  color: var(--text-dim);
-  flex: 1 1 280px;
-}
-
-.sub {
-  margin: 0.15rem 0 0;
-  padding-left: 2.6rem;
-  color: var(--text-dim);
-  font-size: 0.8rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.25rem 0.9rem;
-}
-
-.stackLabel {
-  color: var(--text-dim);
-}
-
-.stackValue {
-  color: var(--tag-text);
 }

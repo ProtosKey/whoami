@@ -1,5 +1,6 @@
 import { useParams, Navigate } from 'react-router-dom';
 import BracketLink from '../components/BracketLink';
+import ScreenNav from '../components/ScreenNav';
 import TerminalPrompt from '../components/TerminalPrompt';
 import DashList from '../components/DashList';
 import Markdown from '../components/Markdown';
@@ -34,8 +35,10 @@ export default function ProjectDetailPage() {
 
   return (
     <div className={styles.inner}>
-      <BracketLink to="/projects" className={styles.back}>
-        cd ../projects
+      <ScreenNav />
+
+      <BracketLink to={`/projects/${project.category}`} className={styles.back}>
+        {`cd ../${project.category}`}
       </BracketLink>
 
       <h1 className={styles.title}>{project.name}</h1>
