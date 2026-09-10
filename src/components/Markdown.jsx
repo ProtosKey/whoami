@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import BracketLink from './BracketLink';
 import styles from './Markdown.module.css';
 
 const components = {
@@ -12,9 +13,9 @@ const components = {
   strong: ({ children }) => <strong className={styles.strong}>{children}</strong>,
   code: ({ children }) => <code className={styles.code}>{children}</code>,
   a: ({ href, children }) => (
-    <a className={styles.link} href={href} target="_blank" rel="noopener noreferrer">
+    <BracketLink href={href} external>
       {children}
-    </a>
+    </BracketLink>
   ),
 };
 

@@ -27,17 +27,20 @@
 }
 
 .name {
-  color: var(--dir);
+  color: var(--accent);
   font-weight: 700;
   text-decoration: none;
   white-space: pre;
   flex: 0 0 auto;
-  transition: color 0.1s ease;
+  padding: 0.1em 0.3em;
+  margin: -0.1em -0.3em;
+  transition: background-color 0.1s ease, color 0.1s ease;
 }
 
 .name:hover,
 .name:focus-visible {
-  color: var(--accent);
+  background-color: var(--accent);
+  color: var(--accent-contrast);
   outline: none;
 }
 
@@ -63,10 +66,4 @@
 
 .stackValue {
   color: var(--tag-text);
-}
-
-@media (prefers-color-scheme: dark) {
-  .name {
-    text-shadow: 0 0 10px rgba(108, 182, 255, 0.35);
-  }
 }

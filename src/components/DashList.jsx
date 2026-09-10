@@ -1,3 +1,4 @@
+import BracketLink from './BracketLink';
 import styles from './DashList.module.css';
 
 export default function DashList({ rows }) {
@@ -13,14 +14,9 @@ export default function DashList({ rows }) {
             <span className={styles.dash}>{dashes}</span>
             <span className={styles.label}>{row.label}</span>{' '}
             {row.href ? (
-              <a
-                className={styles.link}
-                href={row.href}
-                target={row.external ? '_blank' : undefined}
-                rel={row.external ? 'noopener noreferrer' : undefined}
-              >
+              <BracketLink href={row.href} external={row.external}>
                 {row.value}
-              </a>
+              </BracketLink>
             ) : (
               <span className={styles.value}>{row.value}</span>
             )}
