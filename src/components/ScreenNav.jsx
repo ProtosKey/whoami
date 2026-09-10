@@ -5,9 +5,9 @@ import styles from './ScreenNav.module.css';
 const items = [
   { to: '/projects', label: 'whoami' },
   { to: '/projects/skills', label: 'skills' },
-  { to: '/projects/mobile', label: './mobile' },
-  { to: '/projects/systems', label: './systems' },
-  { to: '/projects/other', label: './other' },
+  { to: '/projects/mobile', label: 'mobile' },
+  { to: '/projects/systems', label: 'systems' },
+  { to: '/projects/other', label: 'other' },
 ];
 
 export default function ScreenNav() {
