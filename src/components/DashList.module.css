@@ -9,9 +9,17 @@
 }
 
 .row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
   margin: 0 0 0.25rem;
   font-size: 0.88rem;
   line-height: 1.6;
+}
+
+.prefix {
+  white-space: pre;
+  flex: 0 0 auto;
 }
 
 .dash {
@@ -22,6 +30,8 @@
   color: var(--accent);
 }
 
-.value {
+.valueBox {
+  flex: 1 1 auto;
+  min-width: 0;
   color: var(--text);
 }
