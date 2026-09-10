@@ -1,6 +1,6 @@
 import { profile } from '../data/profile';
 import TerminalPrompt from './TerminalPrompt';
-import KeyValueList from './KeyValueList';
+import DashList from './DashList';
 import styles from './Header.module.css';
 
 const rows = [
@@ -18,8 +18,8 @@ const rows = [
 export default function Header() {
   return (
     <header className={styles.header}>
-      <TerminalPrompt path="/projects" command="whoami" />
-      <KeyValueList rows={rows} />
+      <TerminalPrompt command="whoami -l" />
+      <DashList rows={rows} />
     </header>
   );
 }
