@@ -14,6 +14,7 @@
   --tag-bg: #ecebe2;
   --tag-text: #3d4033;
   --shadow: rgba(23, 25, 15, 0.1);
+  --shadow-hard: rgba(23, 25, 15, 0.3);
   --dir: #2159c9;
   --cyan: #0f7d8c;
   --magenta: #9c3f9c;
@@ -35,6 +36,7 @@
     --tag-bg: #171a12;
     --tag-text: #b9c0ac;
     --shadow: rgba(0, 0, 0, 0.5);
+    --shadow-hard: rgba(0, 0, 0, 0.65);
     --dir: #6cb6ff;
     --cyan: #5fd3e0;
     --magenta: #e08ae0;

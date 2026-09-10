@@ -1,5 +1,6 @@
 // Данные пока захардкожены на основе резюме.
-// TODO: в будущем описание проекта (readme) будет подтягиваться с сервера по slug.
+// TODO: status/stats будут подтягиваться из GitHub API веб-сервером — сейчас это mock-данные для теста вёрстки.
+// TODO: readme в будущем будет подтягиваться из README.md репозитория.
 
 export const projects = [
   {
@@ -16,6 +17,17 @@ export const projects = [
     ],
     stack: ['Compose Multiplatform', 'Voyager', 'Koin', 'MVVM + UDF', 'kotlin-bignum'],
     github: 'ProtosKey/nodal',
+    status: 'active',
+    stats: { stars: 3, lastCommit: '2026-08-02', language: 'Kotlin' },
+    readme: `## Возможности
+
+- Реализовано семь методов интерполяции: Лагранж, Ньютон вперёд/назад, Гаусс вперёд/назад, Стирлинг, Бессель — каждый с корректной классической трактовкой опорных узлов.
+- На графике все методы отрисовываются одновременно, отдельные кривые можно включать и выключать.
+- Точность настраивается вручную — все вычисления идут через \`BigDecimal\`.
+
+## Архитектура
+
+Слои \`domain\` / \`presentation\` / \`di\`, паттерны **CanSolve** и **Visitor**, единое состояние через \`MainStore\`.`,
   },
   {
     slug: 'diff',
@@ -31,6 +43,14 @@ export const projects = [
     ],
     stack: ['Compose Multiplatform', 'Voyager', 'Koin', 'MVVM + UDF', 'StateFlow', 'Coroutines'],
     github: 'ProtosKey/diff',
+    status: 'active',
+    stats: { stars: 2, lastCommit: '2026-07-21', language: 'Kotlin' },
+    readme: `## Возможности
+
+- Усовершенствованный метод Эйлера, Рунге–Кутта 4-го порядка и метод Милна — точность контролируется по правилу Рунге с единым критерием для всех трёх.
+- Защита от переполнений: приложение корректно считает даже там, где значения разрастаются до порядка \`10^43\`.
+- График с pan/zoom сам подстраивает диапазон по Y для быстрорастущих решений.
+- Таблицы вычислений виртуализированы — не тормозят на больших наборах точек.`,
   },
   {
     slug: 'proxima',
@@ -46,6 +66,14 @@ export const projects = [
     ],
     stack: ['Compose Multiplatform', 'Voyager', 'MVVM + UDF', 'BigDecimal'],
     github: 'ProtosKey/proxima',
+    status: 'active',
+    stats: { stars: 1, lastCommit: '2026-06-15', language: 'Kotlin' },
+    readme: `## Возможности
+
+- Перебираются шесть моделей — линейная, квадратичная, кубическая, экспоненциальная, логарифмическая, показательная — лучшая выбирается автоматически по коэффициенту детерминации **R²**.
+- Формулы рендерятся в LaTeX, график строится в реальном времени.
+- Результат копируется в буфер обмена одним нажатием.
+- Все вычисления идут через \`BigDecimal\`, чтобы не терять точность.`,
   },
   {
     slug: 'velosiped',
@@ -61,6 +89,18 @@ export const projects = [
     ],
     stack: ['C23', 'POSIX', 'OpenSSL EVP API', 'CMake', 'CTest', 'cJSON'],
     github: 'ProtosKey/velosiped',
+    status: 'active',
+    stats: { stars: 4, lastCommit: '2026-08-28', language: 'C' },
+    readme: `## Возможности
+
+- Хранилище content-addressed и append-only: файлы адресуются по MD5-хешу через \`OpenSSL EVP API\`.
+- История коммитов — односвязный список, каждый коммит хранит хеш родителя.
+- Поддержан весь базовый цикл: \`init\`, \`add\`, \`status\`, \`commit\`, \`reset\`, \`drop\`, \`log\`.
+- При \`commit\` удалённые файлы автоматически помечаются как \`DELETED\`, без отдельной команды \`rm\`.
+
+## Архитектура
+
+Никаких готовых библиотек — только файлы, дескрипторы и системные вызовы POSIX напрямую. Тесты собраны через \`CTest\`.`,
   },
   {
     slug: 'aka_lab4',
@@ -75,6 +115,14 @@ export const projects = [
     ],
     stack: ['Python', 'RISC-V (RV32I-подобный)', 'pytest', 'GitHub Actions'],
     github: 'ProtosKey/aka_lab4',
+    status: 'done',
+    stats: { stars: 2, lastCommit: '2026-05-10', language: 'Python' },
+    readme: `## Возможности
+
+- Транслятор проходит полный путь от лексера и AST-парсера до двухпроходного ассемблера и генерации кода.
+- Процессор — RV32I-подобный набор команд, каждая инструкция занимает 2–3 такта.
+- Управление через **Control Unit** на ROM из 31 микроинструкции, гарвардская архитектура памяти, потоковый портовый ввод-вывод.
+- Корректность проверяется 50 golden-тестами: вывод, листинг, тик-трейс и покрытие набора команд — всё через \`pytest\` и CI на GitHub Actions.`,
   },
   {
     slug: 'aka_lab3',
@@ -91,6 +139,16 @@ export const projects = [
     ],
     stack: ['Assembly (acc32, f32a, m68k, RISC-V)', 'Wrench'],
     github: 'ProtosKey/aka_lab3',
+    status: 'done',
+    stats: { stars: 1, lastCommit: '2026-04-02', language: 'Assembly' },
+    readme: `## Возможности
+
+- Реверс C-строки — под аккумуляторную архитектуру \`acc32\`.
+- Подсчёт конечных нулей числа — под стековую \`f32a\`.
+- Форматирование строки — под CISC-архитектуру \`m68k\`.
+- Сумма нечётных чисел меньше n — под RISC-V-подобную \`risc-iv\`.
+
+Всё выполнено на учебной платформе **Wrench**.`,
   },
   {
     slug: 'calc_lab3',
@@ -100,6 +158,8 @@ export const projects = [
       'Десктопный калькулятор для численного интегрирования методами прямоугольников, трапеций и Симпсона.',
     stack: ['Kotlin', 'Compose Multiplatform', 'Gradle'],
     github: 'ProtosKey/calc_lab3',
+    status: 'done',
+    stats: { stars: 0, lastCommit: '2026-03-18', language: 'Kotlin' },
   },
   {
     slug: 'java_lab7',
@@ -109,6 +169,8 @@ export const projects = [
       'Менеджер учебных групп: клиент-серверное приложение с аутентификацией и хранением данных в PostgreSQL.',
     stack: ['Java', 'TCP', 'PostgreSQL', 'Gradle'],
     github: 'ProtosKey/java_lab7',
+    status: 'done',
+    stats: { stars: 0, lastCommit: '2026-02-24', language: 'Java' },
   },
   {
     slug: 'web_lab4',
@@ -118,6 +180,8 @@ export const projects = [
       'Веб-приложение для проверки попадания точки в область под графиком, с аутентификацией и совместной работой.',
     stack: ['Java', 'WildFly', 'React + Redux', 'PostgreSQL'],
     github: 'ProtosKey/web_lab4',
+    status: 'done',
+    stats: { stars: 1, lastCommit: '2026-02-02', language: 'Java' },
   },
   {
     slug: 'java_lab3',
@@ -127,6 +191,8 @@ export const projects = [
       'Консольная симуляция битвы нескольких команд на корабле с уникальными характеристиками персонажей.',
     stack: ['Java'],
     github: 'ProtosKey/java_lab3',
+    status: 'done',
+    stats: { stars: 0, lastCommit: '2026-01-14', language: 'Java' },
   },
   {
     slug: 'calc_lab1',
@@ -135,6 +201,8 @@ export const projects = [
     description: 'Решение систем линейных уравнений методом Гаусса в консоли.',
     stack: ['Java', 'Gradle'],
     github: 'ProtosKey/calc_lab1',
+    status: 'done',
+    stats: { stars: 0, lastCommit: '2025-12-20', language: 'Java' },
   },
 ];
 

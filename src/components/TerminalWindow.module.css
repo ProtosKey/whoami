@@ -10,9 +10,9 @@
   margin: 0 auto;
   width: 100%;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 0;
   background: var(--bg-elevated);
-  box-shadow: 0 24px 60px var(--shadow);
+  box-shadow: 4px 4px 0 var(--shadow-hard);
   overflow: hidden;
   align-self: flex-start;
 }
