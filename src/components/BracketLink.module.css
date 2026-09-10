@@ -1,9 +1,8 @@
 .link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.15em;
+  display: inline;
   font-family: var(--font-mono);
   font-size: inherit;
+  white-space: nowrap;
   text-decoration: none;
   color: var(--dir);
   background: transparent;
@@ -21,10 +20,6 @@
   transition: color 0.1s ease;
 }
 
-.label {
-  transition: color 0.1s ease;
-}
-
 .link:hover,
 .link:focus-visible {
   background-color: var(--accent);
@@ -34,5 +29,14 @@
 
 .link:hover .bracket,
 .link:focus-visible .bracket {
+  color: var(--accent-contrast);
+}
+
+.active {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.active .bracket {
   color: var(--accent-contrast);
 }

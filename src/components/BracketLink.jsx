@@ -4,15 +4,15 @@ import styles from './BracketLink.module.css';
 function Inner({ children }) {
   return (
     <>
-      <span className={styles.bracket} aria-hidden="true">[</span>
-      <span className={styles.label}>{children}</span>
-      <span className={styles.bracket} aria-hidden="true">]</span>
+      <span className={styles.bracket} aria-hidden="true">[ </span>
+      {children}
+      <span className={styles.bracket} aria-hidden="true"> ]</span>
     </>
   );
 }
 
-export default function BracketLink({ to, href, external, children, className = '', ...rest }) {
-  const cls = `${styles.link} ${className}`.trim();
+export default function BracketLink({ to, href, external, active, children, className = '', ...rest }) {
+  const cls = `${styles.link} ${active ? styles.active : ''} ${className}`.trim();
 
   if (href) {
     return (
