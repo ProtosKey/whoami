@@ -27,6 +27,10 @@
   margin-bottom: 1.75rem;
 }
 
+.inner > .section:last-child {
+  margin-bottom: 0;
+}
+
 .readme {
   margin-top: 0.75rem;
 }
