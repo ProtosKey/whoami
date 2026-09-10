@@ -1,0 +1,38 @@
+.list {
+  margin: 0;
+}
+
+.row {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.label {
+  color: var(--accent);
+  white-space: pre;
+}
+
+@media (prefers-color-scheme: dark) {
+  .label {
+    text-shadow: 0 0 8px rgba(255, 212, 59, 0.35);
+  }
+}
+
+.value {
+  color: var(--text);
+}
+
+.link {
+  color: var(--text-dim);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--border);
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}

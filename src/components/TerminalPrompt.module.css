@@ -1,0 +1,16 @@
+.prompt {
+  margin: 0 0 0.85rem;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+.ps1 {
+  color: var(--prompt);
+  margin-right: 0.5em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ps1 {
+    text-shadow: 0 0 8px rgba(110, 231, 110, 0.4);
+  }
+}

@@ -1,0 +1,77 @@
+.wrapper {
+  flex: 1;
+  display: flex;
+  padding: clamp(1rem, 4vw, 3rem) 1rem;
+}
+
+.window {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  box-shadow: 0 24px 60px var(--shadow);
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.window::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: var(--scanline-opacity);
+}
+
+.body {
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2.5rem) 2.5rem;
+}
+
+.body > * {
+  animation: fadeIn 0.35s ease both;
+}
+
+.body > *:nth-child(1) {
+  animation-delay: 0.02s;
+}
+.body > *:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.body > *:nth-child(3) {
+  animation-delay: 0.14s;
+}
+.body > *:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.body > *:nth-child(5) {
+  animation-delay: 0.26s;
+}
+.body > *:nth-child(6) {
+  animation-delay: 0.32s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .body > * {
+    animation: none;
+  }
+}
