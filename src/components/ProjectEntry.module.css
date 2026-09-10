@@ -2,6 +2,10 @@
   margin-bottom: 1.4rem;
 }
 
+.entry:last-child {
+  margin-bottom: 0;
+}
+
 .line {
   margin: 0;
   font-size: 0.88rem;

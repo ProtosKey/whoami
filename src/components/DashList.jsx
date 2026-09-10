@@ -11,17 +11,21 @@ export default function DashList({ rows, showTotal = true, width }) {
       {rows.map((row) => {
         const dashes = '-'.repeat(effectiveWidth - row.label.length);
         return (
-          <p key={row.label} className={styles.row}>
-            <span className={styles.dash}>{dashes}</span>
-            <span className={styles.label}>{row.label}</span>{' '}
-            {row.href ? (
-              <BracketLink href={row.href} external={row.external}>
-                {row.value}
-              </BracketLink>
-            ) : (
-              <span className={styles.value}>{row.value}</span>
-            )}
-          </p>
+          <div key={row.label} className={styles.row}>
+            <span className={styles.prefix}>
+              <span className={styles.dash}>{dashes}</span>
+              <span className={styles.label}>{row.label}</span>
+            </span>
+            <span className={styles.valueBox}>
+              {row.href ? (
+                <BracketLink href={row.href} external={row.external}>
+                  {row.value}
+                </BracketLink>
+              ) : (
+                row.value
+              )}
+            </span>
+          </div>
         );
       })}
     </div>
