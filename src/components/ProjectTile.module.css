@@ -1,0 +1,52 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease, transform 0.12s ease;
+}
+
+.tile:hover,
+.tile:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px var(--shadow);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.command {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--dir);
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.ps1 {
+  color: var(--prompt);
+  margin-right: 0.4em;
+}
+
+.description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.stack {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--cyan);
+}
+
+@media (prefers-color-scheme: dark) {
+  .command {
+    text-shadow: 0 0 8px rgba(108, 182, 255, 0.3);
+  }
+}

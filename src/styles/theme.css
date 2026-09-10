@@ -1,0 +1,43 @@
+:root {
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+
+  --bg: #f5f4ef;
+  --bg-elevated: #ffffff;
+  --titlebar-bg: #ece9dd;
+  --text: #17190f;
+  --text-dim: #63695c;
+  --border: #d9d6ca;
+  --accent: #9a6b00;
+  --accent-contrast: #17190f;
+  --prompt: #2f7a3d;
+  --tag-bg: #ecebe2;
+  --tag-text: #3d4033;
+  --shadow: rgba(23, 25, 15, 0.1);
+  --dir: #2159c9;
+  --cyan: #0f7d8c;
+  --magenta: #9c3f9c;
+  --glow: 0 0 0 transparent;
+  --scanline-opacity: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0d0a;
+    --bg-elevated: #101309;
+    --titlebar-bg: #171a10;
+    --text: #dfe3d6;
+    --text-dim: #8a9080;
+    --border: #262a20;
+    --accent: #ffd43b;
+    --accent-contrast: #0b0d0a;
+    --prompt: #6ee76e;
+    --tag-bg: #171a12;
+    --tag-text: #b9c0ac;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --dir: #6cb6ff;
+    --cyan: #5fd3e0;
+    --magenta: #e08ae0;
+    --scanline-opacity: 1;
+  }
+}
