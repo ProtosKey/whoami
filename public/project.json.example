@@ -1,0 +1,14 @@
+{
+  "example": {
+    "category": "example",
+    "status": "active",
+    "name": "example",
+    "description": "example",
+    "stack": ["python", "java", "haskell"],
+    "possibilities": [
+      "examle1",
+      "examle2",
+      "examle3"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+name:
+  type: plain
+  text: Name Surname
+location:
+  type: plain
+  text: Moscow
+education:
+  type: plain
+  text: HSE
+specialization:
+  type: plain
+  text: Computer Science
+english:
+  type: plain
+  text: B1–B2
+github:
+  type: link
+  link: https://github.com/example
+  text: example
+telegram:
+  type: link
+  link: https://t.me/username
+  text: "@username"
+email:
+  type: link
+  link: mailto:name@example.com
+  text: name@example.com

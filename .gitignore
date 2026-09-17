@@ -23,3 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 .idea
 *.iml
+/deploy
+
+/public/whoami.yaml
+/public/skills.yaml
+/public/project.json

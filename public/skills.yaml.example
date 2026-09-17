@@ -1,0 +1,4 @@
+language: [Kotlin, Java, C, Python, Assembly]
+build: [Gradle, CMake, Maven]
+version: [Git, Mercurial]
+tools: [GitHub Actions, Typst]
