@@ -13,7 +13,7 @@ export default function ProjectEntry({ project }) {
       external: true,
     },
     { label: 'summary', value: project.description },
-    { label: 'stack', value: project.stack.join(', ') },
+    { label: 'stack', value: (project.stack || []).join(', ') },
   ];
 
   return (

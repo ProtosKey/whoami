@@ -1,17 +1,21 @@
 import { useLocation } from 'react-router-dom';
 import BracketLink from './BracketLink';
+import useProjects from '../hooks/useProjects';
 import styles from './ScreenNav.module.css';
 
-const items = [
+const staticItems = [
   { to: '/projects', label: 'whoami' },
   { to: '/projects/skills', label: 'skills' },
-  { to: '/projects/mobile', label: 'mobile' },
-  { to: '/projects/systems', label: 'systems' },
-  { to: '/projects/other', label: 'other' },
 ];
 
 export default function ScreenNav() {
   const { pathname } = useLocation();
+  const { projects } = useProjects();
+
+  const activeCategoryIds = [...new Set((projects || []).map((p) => p.category))];
+  const categoryItems = activeCategoryIds.map((id) => ({ to: `/projects/${id}`, label: id }));
+
+  const items = [...staticItems, ...categoryItems];
 
   return (
     <nav className={styles.nav}>
