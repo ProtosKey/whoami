@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# whoami
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Мой сайт-портфолио, стилизованный в виде терминала.
 
-## Available Scripts
+## Технологический стек
 
-In the project directory, you can run:
+- **React 19** - сам интерфейс.
+- **React Router 7** - навигация.
+- **CSS Modules** - стили, у каждого компонента свой файл, классы не текут между компонентами.
+- **js-yaml** - парсит `whoami.yaml`/`skills.yaml` прямо в браузере.
+- **nginx** - раздаёт собранный сайт на VPS.
+- **Let's Encrypt / certbot** - HTTPS, сертификат продлевается сам по `cron`.
 
-### `npm start`
+## Конфигурация
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Контент не зашит в код, грузится в рантайме, поэтому поменять что-то можно без пересборки сайта:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `whoami.yaml` - обо мне. Поле = `{ type: plain или link, text, link? }`.
+  Компонент не знает имён полей заранее, просто рисует всё, что найдёт в файле.
+- `skills.yaml` - навыки, просто `категория: [список]`.
+- `project.json` - список проектов. Его я не пишу руками: периодически крутится [bio-script](https://github.com/ProtosKey/bio_script), обходит репозитории и собирает `project.json`.
+- Хочешь, чтобы репо попал на сайт, тогда просто кладёшь в него `project.yaml`, больше ничего трогать не надо.
 
-### `npm test`
+Меню сверху (например, `mobile`, `systems`) тоже не захардкожено - берётся из того, какие категории реально есть в `project.json`. Появилась
+новая категория — появился пункт меню, сам.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Формат `project.yaml` описан в README у [bio-script](https://github.com/ProtosKey/bio_script).
 
-### `npm run build`
+## Запуск локально
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Файлы `.example` - это шаблоны конфигурационных файлов.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+cp public/whoami.yaml.example public/whoami.yaml
+cp public/skills.yaml.example public/skills.yaml
+cp public/project.json.example public/project.json
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm start
+```
